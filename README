@@ -1,0 +1,1 @@
+Given a time X, run through a directory of mp3 files, calculate their time, and create an m3u playlist with mp3s that fill up time X.
