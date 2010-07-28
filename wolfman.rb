@@ -5,7 +5,12 @@ require 'sqlite3'
 
 class Wolfman
   def initialize(time, dir)
-    @time, @dir = time, dir
+    #we assume time is given in minutes
+    if File.exists?(dir) && File.directory?(dir)
+      @time, @dir = time, dir
+    else
+      raise "Supplied directory does not exist or is not a directory"
+    end
   end
 
   def index
