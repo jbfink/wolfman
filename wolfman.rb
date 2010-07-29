@@ -11,11 +11,19 @@ class Wolfman
     else
       raise "Supplied directory does not exist or is not a directory"
     end
+    @filled = 0
+    @tracks = []
   end
 
   public
     def index
       #create and index of songs from @dir
+    end
+
+    def fill_time
+      while @filled < @time
+        @tracks.push(random_song)
+      end
     end
 
     def write_playlist(format)
@@ -28,6 +36,7 @@ class Wolfman
     end
 
     def random_song
-      #select a random song from the database
+      # get new song with length <= (@time - @filled)
+      # return song
     end
 end
