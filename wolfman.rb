@@ -23,6 +23,7 @@ class Wolfman
     def fill_time
       while @filled < @time
         @tracks.push(random_song)
+        @filled += random_song.length
       end
     end
 
@@ -37,6 +38,6 @@ class Wolfman
 
     def random_song
       # get new song with length <= (@time - @filled)
-      # return song
+      # return song as mp3info object
     end
 end
